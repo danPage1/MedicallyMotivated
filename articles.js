@@ -39,6 +39,17 @@ function populateTopTen() {
 	}
 }
 
+function parseLoad(x){
+	document.getElementById('navRecent').innerHTML = "";
+	for (var i = obj.articles.length - 1; i >= 0; i--) {
+		
+		if(obj.articles[i].Name.toLowerCase().includes(x)){
+			document.getElementById('navRecent').innerHTML += "<a href='" + obj.articles[i].FilePath + ".html'' class='list-group-item list-group-item-action flex-column align-items-start'><div class='d-flex w-100 justify-content-between'><h5 class='mb-1'>" + obj.articles[i].Name + "</h5><small>" + obj.articles[i].Date + "</small></div><p class='mb-1'>" + obj.articles[i].Description + "</p><small>" + obj.articles[i].Type + "</small></a>"
+		}
+	}
+
+}
+
 
 
 
